@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+<script type="text/javascript">
+	//混合构造函数混合方式(构造函数配合原型)
+	function createPerson(name, qq) { //构造函数加属性
+		this.qq = qq;
+		this.name = name
+	}
+	createPerson.prototype.showName = function(){//原型加方法
+		alert('my name =' + this.name)
+	}
+	createPerson.prototype.showQQ = function(){
+		alert('my qq =' + this.qq)
+	}
+	var obj = new createPerson('Mr Lan', '1079161148');
+	var obj2 = new createPerson('Mr Li', '1079161168');
+	//obj.showName() //还可以继续用不影响使用
+	//obj.showQQ()
+	alert(obj.showName()==obj2.showName())
+</script>
+	</body>
+
+</html>

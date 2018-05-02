@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>元素水平垂直居中</title>
+		<style>
+			/*方式一*/
+			/*.box{
+				width: 100px;
+				height: 100px;
+				background: red;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				margin-left: -50px;
+				margin-top: -50px;
+			}*/
+			/*方式二*/
+			/*.box{
+				width: 100px;
+				height: 100px;
+				background: red;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50px,-50px);
+				或者transform: translate(-50%,-50%);
+			}*/
+			/*方式三  技巧*/
+			.box{
+				width: 100px;
+				height: 100px;
+				background: red;
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				margin:auto;
+			}
+			/*方式四  弹性盒*/
+			/*.father{
+				display: flex;
+				width: 400px;
+				height: 400px;
+				background: red;
+				justify-content: center;
+				align-items: center;
+			}
+			.son{
+				width: 100px;
+				height: 100px;
+				background: aqua;
+				/*flex: auto;*/
+			}*/
+		</style>
+	</head>
+	<body>
+		<div class="box"></div>
+		<!--<div class="father">
+			<div class="son"></div>
+		</div>-->
+	</body>
+</html>

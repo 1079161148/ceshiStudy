@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+<script type="text/javascript">
+//简单的往外层找
+var a = 1;
+function fn(){
+	var a = 6;
+	function fn2(){
+		console.log(a); //20
+	}
+	a = 20; //替代a = 6;了
+	return fn2;
+}
+var test = fn();
+test();
+</script>
+	</body>
+
+</html>

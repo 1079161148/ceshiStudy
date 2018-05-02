@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			function Car(name, price) { //构造函数
+				this.name = name;
+				this.price = price;
+				this.date = "2016.03.02";
+			}
+
+			Car.prototype.start = function(){
+				console.log(this.name + "定义函数对象的方法一")
+				return this;
+			}
+
+			Car.prototype.end = function() {
+				console.log(this.name + "定义函数对象的方法二")
+				return this;
+			}
+
+			Car.prototype.getPrice = function() {
+				console.log(this.price + "定义函数对象的方法三") //this指动态绑定对象 的实例（obj1,obj2谁做的）
+				return this;
+			}
+
+			var obj1 = new Car("宝马", 1000000) //-- -- -- -- > 创建一个新的对象
+			var obj2 = new Car("奥迪", 400000) //-- -- -- -- > 再创建一个对象分配另一个实例
+			obj1.getPrice();
+			//-- -- -- -- > //它调用时候是1000000
+			obj2.getPrice();
+			//-- -- -- -- > //它调用时候是400000
+			
+			obj1.getPrice().start().end()//链式调用调用了前面三个方法；
+		</script>
+	</body>
+
+</html>

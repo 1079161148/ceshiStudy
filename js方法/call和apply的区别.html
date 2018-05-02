@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			var str = {
+				name: "wow",
+				age: "18",
+				search: function(sex, addr) {
+					console.log(this.name + "和性别" + sex + "和地址" + addr)
+				}
+			}
+
+			var str1 = {
+				name: 20
+			}
+
+			var str2 = {
+				name: 23
+			}
+
+			str.search.call(str1, "男", "江西")
+			str.search.apply(str2, ["女", "湖北"])
+		</script>
+	</body>
+
+</html>

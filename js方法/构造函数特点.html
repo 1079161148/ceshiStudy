@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//Person.prototype  ---原型
+			//Person.prototype = {} --是祖先
+			Person.prototype.name = "wow";
+			function Person(name,age,sex){
+				this.name = name;
+				this.age = age;
+				this.sex = sex;
+			}
+			var person = new Person('bob','45','man');//大驼峰
+			console.log(person.name)//bob
+		</script>
+	</body>
+</html>
