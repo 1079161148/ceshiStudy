@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-1.11.1.js"></script>
+</head>
+<body>
+
+<script>
+    // 客户端使用getJSON方法请求另一台机子上的脚本
+    // 浏览器会生成一个随机的callback参数
+    //Request URL:http://192.168.2.151/test02.php?callback=jQuery223012153422182153673_1469169862331&_=1469169862332
+    //$.getJSON简单易用，但就是不能指定回调函数。
+    $.getJSON("http://192.168.7.16/kuayu/test02.php?callback=?",function(json){
+        alert(json.website);
+    });
+</script>
+
+</body>
+</html>

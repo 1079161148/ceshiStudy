@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jsonp</title>
+    <script src="../jquery-2.2.3.min.js"></script>
+</head>
+<body>
+
+<script>
+    // 这是回调方法
+    function cb(data){
+        alert(data.website);
+    }
+</script>
+<!--这是跨域请求的代码,切记，这段代码要在回调函数之后-->
+<script src="http://192.168.7.16/kuayu/test02.php?callback=cb"></script>
+
+　<!--JSONP（JSON with Padding）是资料格式 JSON 的一种“使用模式”，可以让网页从别的网域要资料。
+另一个解决这个问题的新方法是跨来源资源共享。
+由于同源策略，一般来说位于 server1.example.com 的网页无法与不是 server1.example.com 的服务器沟通，而 HTML 的< script> 元素是一个例外。
+利用< script> 元素的这个开放策略，网页可以得到从其他来源动态产生的 JSON 资料，而这种使用模式就是所谓的 JSONP。
+用 JSONP 抓到的资料并不是 JSON，而是任意的 JavaScript，用 JavaScript 直译器执行而不是用 JSON 解析器解析。
+
+这话该怎么理解呢！我个人是这样认为的，用<script>跨域的请求数据，跨域的服务器返回一段【JavaScript代码】，不是json格式数据，是JavaScript代码，这样，这段代码就由JavaScript 直译器执行。
+-->
+</body>
+</html>

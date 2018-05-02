@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--因为IE，IE有bug,IE在我们使用完闭包之后，依然回收不了闭包里面引用的变量，这是IE问题，而不是闭包的问题。-->
+		<script>
+			function A(outerVar){
+				var outerArg = 1;
+				function B(){
+					alert(outerArg+"========"+outerVar)
+				}
+				return B;
+			}
+			
+			/*var C = A(110);
+			C();*/
+			
+			A(110)();
+		</script>
+	</body>
+</html>

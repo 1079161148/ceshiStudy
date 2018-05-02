@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>给jquery对象添加方法</title>
+		<script src="jquery-1.11.1.js"></script>
+	</head>
+	<body>
+		<div></div>
+		
+		
+		<script>
+			$.fn.extend({
+				singing:function(){
+					alert("嘻唰唰")
+				}
+			})
+			
+			$("div").singing();
+		</script>
+	</body>
+</html>

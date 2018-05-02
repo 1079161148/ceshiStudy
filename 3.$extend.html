@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>合并多个对象</title>
+		<script src="jquery-1.11.1.js"></script>
+	</head>
+	<body>
+		<script>
+			$(function(){
+				var Css1 = {size:'10px',style:'oblique',color:'red',backgroundColor:"green"};
+				var Css2 = {size:'12px',style:'oblique',color:'yellow',weight:"bolder"};
+				$.extend(Css1,Css2);
+			
+				console.log(Css1)
+				//结果：
+				//{size: "12px", style: "oblique", color: "yellow", backgroundColor: "green", weight: "bolder"}
+			})
+			
+			
+			
+		</script>
+		
+	</body>
+</html>

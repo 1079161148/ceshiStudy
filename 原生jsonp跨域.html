@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	
+<script>
+	// jsonp跨域原生写法
+  	var script = document.createElement('script');
+    script.src = 'http://192.168.7.16/kuayu/test02.php?callback=aa';
+    document.body.appendChild(script);
+    //aa('后台数据')
+    function aa(res) {
+        alert(res.website);
+    }
+</script>	
+</body>
+</html>

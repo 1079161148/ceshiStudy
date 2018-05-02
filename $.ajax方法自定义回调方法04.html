@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-1.11.1.js"></script>
+</head>
+<body>
+
+
+<script>
+    $.ajax({
+        type : "post",
+        //cache : false, //默认值true
+        //实际上访问时产生的地址为: http://192.168.1.122/kuayu/test02.php?callbackfun=cb
+        url : "http://192.168.7.16/kuayu/test02.php",
+        dataType : "jsonp",    // 数据格式指定为jsonp
+        //jsonp: "callbackfun",     //传递给请求处理程序或页面的，用以获得jsonp回调函数名的参数名(默认为:callback)
+        jsonpCallback:"jsonpCallback1",   //自定义的jsonp回调函数名称，默认为jQuery自动生成的随机函数名
+                                  
+        success : function(json){
+            alert("ddd")
+            alert(json.website);
+        }
+    });
+
+    // 回调方法
+    function jsonpCallback1(data){
+        alert(data.website);
+
+    }
+</script>
+
+<!--总结
+正所谓无规矩不成方圆，以安全为出发点，遵循同源策略是一个好品德。
+但我们也有跨域请求的需求，jsonp就能满足我们的需求。
+当然跨域请求还有很多的方法，不单止jsonp。-->
+</body>
+</html>
